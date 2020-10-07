@@ -247,8 +247,7 @@ test('no uncaught parse errors', async t => {
 
 // Fails randomly on Node 10:
 // Blocked by https://github.com/istanbuljs/nyc/issues/619
-// eslint-disable-next-line ava/no-skip-test
-test.skip('the old stacktrace is recovered', async t => {
+test('the old stacktrace is recovered', async t => {
 	const error = await t.throwsAsync(got('https://example.com', {
 		request: () => {
 			throw new Error('foobar');
